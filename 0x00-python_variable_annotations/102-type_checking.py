@@ -1,30 +1,19 @@
 #!/usr/bin/env python3
-"""
-102-type_checking.py
-"""
+""" This module contains a type-annotated function zoom_array """
+from typing import Tuple, List, Any
 
 
-from typing import List, Any
+def zoom_array(lst: Tuple, factor: int = 2) -> List:
+    """ zooms an array """
 
-
-def zoom_array(lst: List[Any], factor: int = 2) -> List[Any]:
-    """_summary_
-
-    Args:
-        lst (List[Any]): _description_
-        factor (int, optional): _description_. Defaults to 2.
-
-    Returns:
-        List[Any]: _description_
-    """
-    zoomed_in: List[Any] = [
+    zoomed_in: List = [
         item for item in lst
         for i in range(factor)
     ]
     return zoomed_in
 
 
-array = [12, 72, 91]
+array = (12, 72, 91)
 
 zoom_2x = zoom_array(array)
 
